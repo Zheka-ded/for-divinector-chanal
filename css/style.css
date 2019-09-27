@@ -1,0 +1,115 @@
+.body{
+    background: url('../img/large.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.wrapper{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.harmonic{
+    background-color: #262626;
+    display: flex;
+}
+
+.harmonic h2 {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 25px;
+    color: #fff;
+}
+
+.harmonic a{
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.harmonic ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    margin-left: auto;
+}
+
+.harmonic li{
+    color: #fff;
+    background: #262626;
+    display: block;
+    padding: 10px 25px;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 500ms;
+}
+
+.harmonic li a{
+    color: inherit;
+}
+
+.harmonic li:hover,
+.harmonic li:focus{
+    background-color: #cc2a36;
+    color: #fff;
+    cursor: pointer;
+}
+
+.harmonic ul li ul{
+    position: absolute;
+    transition: background-color 0.5s ease-in;
+    margin-top: 10px;
+    left: 0;
+    display: none;
+}
+
+.harmonic ul li:hover > ul,
+.harmonic ul li:focus > ul,
+.harmonic ul li ul:focus,
+.harmonic ul li ul:hover{
+    opacity: 1;
+    display: block;
+}
+
+.harmonic ul li ul li{
+    clear: both;
+    width: 100%;
+    animation: animate 800ms forwards ease;
+}
+
+.harmonic ul li ul li:nth-of-type(1){
+    transform-origin: top left;
+    transform: skewX(45deg) scaleY(0)
+}
+
+.harmonic ul li ul li:nth-of-type(2){
+    transform-origin: top right;
+    transform: skewX(-45deg) scaleY(0);
+    animation-delay: 150ms;
+}
+
+.harmonic ul li ul li:nth-of-type(3){
+    transform-origin: top right;
+    transform: skewX(45deg) scaleY(0);
+    animation-delay: 300ms;
+}
+
+.harmonic ul li ul li:nth-of-type(4){
+    transform-origin: top right;
+    transform: skewX(-45deg) scaleY(0);
+    animation-delay: 450ms;
+}
+
+.harmonic ul li ul li:nth-of-type(5){
+    transform-origin: top right;
+    transform: skewX(45deg) scaleY(0);
+    animation-delay: 600ms;
+}
+
+@keyframes animate{
+    to{
+        transform: skewX(0deg) scaleY(1);
+    }
+}
