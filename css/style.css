@@ -3,9 +3,23 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: 'Courier New', Courier, monospace;
 }
+
+.container{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.title__text{
+    font-size: 30px;
+    font-weight: 900;
+    text-shadow: 2px 1px 1px #fff
+}
+
+/* Выпадающее меню гармошка */
 
 .wrapper{
     width: 600px;
@@ -112,4 +126,48 @@
     to{
         transform: skewX(0deg) scaleY(1);
     }
+}
+
+
+
+/* Меню задвижка ))) */
+
+.menu-area{
+    background-color: #262626;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.menu-area a{
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    margin: 20px;
+}
+
+.menu-area a:hover::before{
+    width: 100%;
+}
+
+.menu-area a::before{
+    content: attr(data-text);
+    /* content: ''; */
+    border-bottom: 3px solid #ef4366;
+    color: #fff;
+    white-space: nowrap;
+    width: 0%;
+    overflow: hidden;
+    padding: 10px 0;
+    transition: 0.4s;
+    position: absolute;
+    left: 0;
+    top: -2px;
 }
